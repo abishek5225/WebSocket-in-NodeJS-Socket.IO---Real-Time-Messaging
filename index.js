@@ -1,12 +1,17 @@
-const express = require('express');
-const { log } = require('node:console');
-const {createServer}= require('node:http')
+import express from 'express'
+import {createServer} from 'node:http'
+import { fileURLToPath } from 'node:url';
+import {dirname , join} from 'node:path';
+
 
 const app = express();
 const server = createServer(app);
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const __client = join(__dirname, 'client')
+
 app.get('/', (req, res)=>{
-    res.send('<h1>Hello World!</h1>')
+    res.sendFile(join(__client, 'index.html'))
 })
 
 server.listen(3500, ()=>{
