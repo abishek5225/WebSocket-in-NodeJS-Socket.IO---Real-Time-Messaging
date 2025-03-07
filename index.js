@@ -17,6 +17,9 @@ app.get('/', (req, res)=>{
 
 io.on('connection', (socket)=>{
     console.log('a new client connected')
+    socket.on('disconnected',()=>{
+        console.log('client disconnected')
+    })
 })
 
 server.listen(3500, ()=>{
