@@ -36,29 +36,14 @@
         word-break: break-word;
         transition: 0.3s;
       }
-      #input:focus {
-        outline: none;
+      #messeges > li:nth-child(odd){
+        background: #44475a;
       }
-      #form > button {
-        background: #333;
-        border: none;
-        padding: 0 1rem;
-        margin: 0.25rem;
-        border-radius: 3px;
-        outline: none;
-        color: #fff;
+      #messeges > li:nth-child(even){
+        background: #6272a4;
       }
-
-      #messages {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-      }
-      #messages > li {
-        padding: 0.5rem 1rem;
-      }
-      #messages > li:nth-child(odd) {
-        background: #efefef;
+      #messeges > li:hover{
+        transform: scale(1.05);
       }
     </style>
   </head>
