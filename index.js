@@ -15,15 +15,7 @@ app.get('/', (req, res)=>{
     res.sendFile(join(__client, 'index.html'))
 })
 
-io.on('connection', (socket)=>{
-    socket.on('chat message',(msg)=>{
-        console.log('message:'+msg)
-    })
-})
 
-io.emit('hello',     
-        'world'
-)
 
 server.listen(3500, ()=>{
     console.log('Server is running on port http://localhost:3500')
