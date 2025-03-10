@@ -45,13 +45,57 @@
       #messeges > li:hover{
         transform: scale(1.05);
       }
+       #form {
+            width: 90%;
+            max-width: 500px;
+            display: flex;
+            margin-top: 15px;
+        }
+
+        #input {
+            flex-grow: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            outline: none;
+            background: #44475a;
+            color: white;
+        }
+
+        #form > button {
+            padding: 12px 18px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 20px;
+            background: #50fa7b;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #form > button:hover {
+            background: #40d47e;
+        }
+        .container{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background: white;
+          height: 90vh;
+          width: 500px;
+        }
     </style>
   </head>
   <body>
-    <ul id="messages"></ul>
+    <div class="container">
+      <ul id="messages"></ul>
     <form id="form" action="">
       <input id="input" autocomplete="off" /><button>Send</button>
     </form>
+    </div>
 
     <script src="/socket.io/socket.io.js"></script>
     <script>
