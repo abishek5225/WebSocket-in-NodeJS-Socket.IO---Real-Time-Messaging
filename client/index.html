@@ -28,18 +28,22 @@
 
 
 
-    <script src="/socket.io/socket.io.js"></script>
+    <script src="/socket.io/socket.io.js">
+      //this loads the socket.io client library so that the browser can communicate with the server
+    </script>
     <script>
-      const socket = io()
+      
+      const socket = io()//it helps to connects the client to the socket.io server
+
       const form = document.getElementById('form')
       const input = document.getElementById('input')
       const messages = document.getElementById('messages')
 
       form.addEventListener('submit', (e) => {
-        e.preventDefault()
+        e.preventDefault()  // prevents the page from eloading
         if (input.value) {
-          socket.emit('chat message', input.value)
-          input.value = ''
+          socket.emit('chat message', input.value)  //sends message to the server using the event 'chat message'
+          input.value = '' //clears the input field after sending the message
         }
       })
     </script>
