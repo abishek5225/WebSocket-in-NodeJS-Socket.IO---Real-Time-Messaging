@@ -21,6 +21,7 @@ io.on('connection', (socket)=>{
     console.log('a user connected');
 })
 
+
 server.listen(3500, ()=>{
     console.log('Server is running on port http://localhost:3500')
 })
